@@ -16,3 +16,12 @@ D:\GitHub\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.Properties.R
 D:\GitHub\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.csproj.GenerateResource.Cache
 D:\GitHub\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.exe
 D:\GitHub\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.pdb
+C:\github_doc\virtualTouchpad\virtualTouchpad\bin\Debug\virtualTouchpad.exe.config
+C:\github_doc\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.exe
+C:\github_doc\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.pdb
+C:\github_doc\virtualTouchpad\virtualTouchpad\bin\Debug\virtualTouchpad.exe
+C:\github_doc\virtualTouchpad\virtualTouchpad\bin\Debug\virtualTouchpad.pdb
+C:\github_doc\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.csprojResolveAssemblyReference.cache
+C:\github_doc\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.mainTouchpad.resources
+C:\github_doc\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.Properties.Resources.resources
+C:\github_doc\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.csproj.GenerateResource.Cache
