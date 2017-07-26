@@ -39,10 +39,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainTouchpad";
             this.Text = "virtualTouchpad";
-            //this.Load += new System.EventHandler(this.mainTouchpad_load);
-            //this.Paint += new System.Windows.Forms.PaintEventHandler(this.mainTouchpad_paint);
-            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotKey);
-            //this.MouseEnter += new System.EventHandler(this.mainTouchpad_MouseEnter);
+            this.Load += new System.EventHandler(this.mainTouchpad_load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.mainTouchpad_paint);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotKey);
+            this.MouseEnter += new System.EventHandler(this.mainTouchpad_MouseEnter);
             this.ResumeLayout(false);
 
         }
