@@ -1,0 +1,9 @@
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\bin\Debug\virtualTouchpad.exe.config
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\bin\Debug\virtualTouchpad.exe
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\bin\Debug\virtualTouchpad.pdb
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.csprojResolveAssemblyReference.cache
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.mainTouchpad.resources
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.Properties.Resources.resources
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.csproj.GenerateResource.Cache
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.exe
+C:\Users\Lixin\Desktop\virtualTouchpad\virtualTouchpad\obj\Debug\virtualTouchpad.pdb
