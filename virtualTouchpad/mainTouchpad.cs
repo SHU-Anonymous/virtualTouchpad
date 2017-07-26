@@ -118,17 +118,19 @@ namespace virtualTouchpad
         private void mainTouchpad_paint(object sender, PaintEventArgs e)
         {
             Color myColor;
-            myColor = Color.FromArgb(192, 192, 192);
+            myColor = Color.FromArgb(224, 224, 224);
             Brush bsh = new SolidBrush(myColor);
             Graphics g = e.Graphics;
             g.FillRectangle(bsh, recBtnLeft);
 
             //填充左，右按钮
-            myColor = Color.FromArgb(192, 192, 192);
+            myColor = Color.FromArgb(224, 224, 224);
+            // When BtnDown myColor <- Color.FromArgb(192, 192, 192)
             bsh = new SolidBrush(myColor);
             g.FillRectangle(bsh, recBtnRight);
 
-            myColor = Color.FromArgb(192, 192, 192);
+            myColor = Color.FromArgb(224, 224, 224);
+            // When BtnDown myColor <- Color.FromArgb(192, 192, 192)
             bsh = new SolidBrush(myColor);
             g.FillRectangle(bsh, recTouchBoard);
 
