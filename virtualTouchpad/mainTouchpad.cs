@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace virtualTouchpad
 {
-    public partial class mainTouchpad : Form
+    public partial class mainTouchpad : WMTouchForm
     {
         enum touchSignal
         {
