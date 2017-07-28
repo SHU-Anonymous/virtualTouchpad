@@ -41,9 +41,5 @@ namespace ReceiveData
 
         [DllImport("user32.dll", EntryPoint = "WindowFromPoint")]
         public static extern IntPtr WindowFromPoint(Point p);
-
-        [DllImport("user32.dll", EntryPoint = "keybd_event", SetLastError = true)]
-        public static extern void keybd_event(Keys bVk, byte bScan, uint dwFlags, uint dwExtraInfo);
-
     }
 }

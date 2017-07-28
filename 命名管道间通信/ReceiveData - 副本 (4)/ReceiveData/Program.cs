@@ -135,7 +135,8 @@ namespace ReceiveData
                             //Win32Api.SetForegroundWindow(hwnd);
 
                             Win32Api.SetCursorPos(nowMouseLoc.X,nowMouseLoc.Y);
-                            myMouseManager(Win32Constant.MOUSEEVENTF_LEFTDOWN | Win32Constant.MOUSEEVENTF_LEFTUP);
+                            myMouseManager(Win32Constant.MouseEvent_Absolute
+                                |Win32Constant.MOUSEEVENTF_LEFTDOWN | Win32Constant.MOUSEEVENTF_LEFTUP);
 
                             for (int q = 0; q < 5; q++)
                             {
@@ -151,18 +152,14 @@ namespace ReceiveData
                             Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
                             // Win32Api.mouse_event(Win32Constant.MOUSEEVENTF_RIGHTDOWN | Win32Constant.MOUSEEVENTF_RIGHTUP,
                             //     0, 0, 0, (IntPtr)0);
-                            //IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
-                            //Win32Api.SetForegroundWindow(hwnd);
+                            IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
+                            Win32Api.SetForegroundWindow(hwnd);
 
                             for (int q = 0; q < 100; q++)
                             {
-                                IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
-                                Win32Api.SetForegroundWindow(hwnd);
-                                nowMouseLoc.X++;
-                                nowMouseLoc.Y++;
                                 Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
                             }
-                            //Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
+
                         }
                         //手指抬起
                         else if (temp[1] == 't')
