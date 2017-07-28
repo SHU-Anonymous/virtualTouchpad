@@ -1,0 +1,6 @@
+F:\外包\test\绘制触摸板窗口\SendData\SendData\bin\Debug\SendData.exe.config
+F:\外包\test\绘制触摸板窗口\SendData\SendData\bin\Debug\SendData.exe
+F:\外包\test\绘制触摸板窗口\SendData\SendData\bin\Debug\SendData.pdb
+F:\外包\test\绘制触摸板窗口\SendData\SendData\obj\Debug\SendData.csprojResolveAssemblyReference.cache
+F:\外包\test\绘制触摸板窗口\SendData\SendData\obj\Debug\SendData.exe
+F:\外包\test\绘制触摸板窗口\SendData\SendData\obj\Debug\SendData.pdb
