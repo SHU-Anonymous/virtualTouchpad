@@ -1,0 +1,6 @@
+F:\外包\test\命名管道间通信\ReceiveData\ReceiveData\bin\Debug\ReceiveData.exe.config
+F:\外包\test\命名管道间通信\ReceiveData\ReceiveData\bin\Debug\ReceiveData.exe
+F:\外包\test\命名管道间通信\ReceiveData\ReceiveData\bin\Debug\ReceiveData.pdb
+F:\外包\test\命名管道间通信\ReceiveData\ReceiveData\obj\Debug\ReceiveData.exe
+F:\外包\test\命名管道间通信\ReceiveData\ReceiveData\obj\Debug\ReceiveData.pdb
+F:\外包\test\命名管道间通信\ReceiveData\ReceiveData\obj\Debug\ReceiveData.csprojResolveAssemblyReference.cache
