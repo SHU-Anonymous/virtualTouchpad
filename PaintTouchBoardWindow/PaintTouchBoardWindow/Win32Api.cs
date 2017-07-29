@@ -28,6 +28,22 @@ namespace PaintTouchBoardWindow
 
         [DllImport("user32.dll")]
         public static extern void mouse_event(
-            int dwFlags, int dx, int dy, int dwData, IntPtr dwExtraInfo); 
+            int dwFlags, int dx, int dy, int dwData, IntPtr dwExtraInfo);
+
+        [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);//设置此窗体为活动窗体
+
+        [DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto, ExactSpelling = true)]
+        public static extern IntPtr GetForegroundWindow(); //获得本窗体的句柄
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int SetWindowPos(IntPtr hWnd, int hWndInsertAfter, 
+            int x, int y, int Width, int Height, int flags);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern bool GetWindowRect(IntPtr hWnd, ref Win32Struct.RECT lpRect);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern bool ScreenToClient(IntPtr hWnd, ref Win32Struct.POINT lpPoint);
     }
 }
