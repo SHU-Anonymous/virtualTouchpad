@@ -40,21 +40,6 @@ namespace ReceiveData
             return (int)(e * Math.Pow(Math.Abs(c), 1.7));
         }
 
-        public static void func()
-        {
-            while (true)
-            {
-               // IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
-                //Win32Api.SetForegroundWindow(hwnd);
-                if (s == false)
-                {
-                   // Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
-                   // Win32Api.mouse_event(Win32Constant.MOUSEEVENTF_MOVE, 1, 0, 0, (IntPtr)0);
-                }
-                    
-            }
-        }
-
         public static void myMouseManager(int flag)
         {
             Win32Struct.MouseInput myMinput = new Win32Struct.MouseInput();
@@ -65,7 +50,7 @@ namespace ReceiveData
             myMinput.dx = nowMouseLoc.X * (65335 / ScreenWidth);
             myMinput.dy = nowMouseLoc.Y * (65335 / ScreenHeight);
 
-            myMinput.Mousedata = 0;
+            myMinput.Mousedata = 1000000000;
             //设置鼠标工作模式
             myMinput.dwFlag = flag;
             myMinput.time = 0;
@@ -83,10 +68,14 @@ namespace ReceiveData
             }
         }
 
+        static IntPtr intptr;
+
         static void Main(string[] args)
         {
-            threadUpdateCur = new Thread(func);
-            threadUpdateCur.Start();
+
+            Console.Title = "WAHAHA";
+            intptr = Win32Api.FindWindow("ConsoleWindowClass", "WAHAHA");
+            
             using (NamedPipeClientStream pipeStream = new NamedPipeClientStream("testpipe"))
             {
                 pipeStream.Connect();
@@ -98,15 +87,16 @@ namespace ReceiveData
                     string temp;
                     while ((temp = rdr.ReadLine()) != "")
                     {
-                       // Win32Struct.POINT p = new Win32Struct.POINT(0, 0);
-                       // Win32Api.GetCursorPos(ref p);
-                       // nowMouseLoc = new Point(p.X, p.Y);
+
+                        //设置鼠标位置并且刷新
+                        Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
+                        // Win32Api.mouse_event(Win32Constant.MOUSEEVENTF_MOVE, 1, 0, 0, (IntPtr)0);
+
                         Console.WriteLine("mouse locatiol: {0},{1}", nowMouseLoc.X, nowMouseLoc.X);
 
                         Console.WriteLine("{0}:{1}", DateTime.Now, temp);
                         if (temp[1] == 'm')
                         {
-                            s = true;
                             nowMouseState = MouseState.move;
                             //'#' + "move" + '#'
                             
@@ -137,44 +127,36 @@ namespace ReceiveData
                                     nowMouseLoc.Y + calculate(nowFingerLoc.Y, lastFingerLoc.Y));
                             lastFingerLoc = new Point(nowFingerLoc.X, nowFingerLoc.Y);
                             //设置鼠标位置
-                            myMouseManager(Win32Constant.MouseEvent_Absolute | Win32Constant.MouseEvent_Move);
-                            //test
-                            
-
+                            myMouseManager(Win32Constant.MouseEvent_Move);
+                            Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
                         }
 
                         else if (temp[1] == 'l')
                         {
                             nowMouseState = MouseState.leftDown;
-                            //myMouseManager(Win32Constant.MouseEvent_Absolute | Win32Constant.MouseEvent_Move);
-                            //myMouseManager(Win32Constant.MouseEvent_LeftDown);
-
-                            //IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
-                            //Win32Api.SetForegroundWindow(hwnd);
-
-                            Win32Api.SetCursorPos(nowMouseLoc.X,nowMouseLoc.Y);
-                            myMouseManager(Win32Constant.MouseEvent_Absolute
-                                |Win32Constant.MOUSEEVENTF_LEFTDOWN | Win32Constant.MOUSEEVENTF_LEFTUP);
-                            myMouseManager(Win32Constant.MouseEvent_Absolute
-                                | Win32Constant.MOUSEEVENTF_LEFTDOWN | Win32Constant.MOUSEEVENTF_LEFTUP);
-                            Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
-
-                            for (int q = 0; q < 100; q++)
+                            IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
+                            //
+                            for (int i = 0; i < 10; i++)
                             {
-                                Win32Api.SetCursorPos(q, q);
-                                Win32Api.mouse_event(Win32Constant.MOUSEEVENTF_MOVE, 0, 1, 0, (IntPtr)0);
-                                Thread.Sleep(50);
+                                Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
+                                Thread.Sleep(10);
                             }
+                            myMouseManager(Win32Constant.MOUSEEVENTF_LEFTDOWN |
+                            Win32Constant.MOUSEEVENTF_LEFTUP);
+
+
                         }
 
                         else if (temp[1] == 'r')
                         {
                             nowMouseState = MouseState.rightDown;
                             Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
-                            myMouseManager(Win32Constant.MouseEvent_RightDown);
+                            myMouseManager(Win32Constant.MouseEvent_RightDown| Win32Constant.MouseEvent_RightUp);
                             Win32Api.SetCursorPos(nowMouseLoc.X, nowMouseLoc.Y);
-                            // Win32Api.mouse_event(Win32Constant.MOUSEEVENTF_RIGHTDOWN | Win32Constant.MOUSEEVENTF_RIGHTUP,
-                            //     0, 0, 0, (IntPtr)0);
+
+                            Win32Api.SetForegroundWindow(intptr);
+                            Win32Api.SetCursorPos(nowMouseLoc.X+1, nowMouseLoc.Y+1);
+                            
                         }
                         //手指抬起
                         else if (temp[1] == 't')
@@ -196,3 +178,31 @@ namespace ReceiveData
         }
     }
 }
+
+
+//Win32Api.mouse_event(Win32Constant.MOUSEEVENTF_LEFTDOWN |
+// Win32Constant.MOUSEEVENTF_LEFTUP, 0, 0, 0, (IntPtr)0);
+//
+
+
+//Win32Api.SetForegroundWindow(intptr);
+
+//IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
+
+/*
+ *  myMouseManager(Win32Constant.MOUSEEVENTF_LEFTDOWN|
+    Win32Constant.MOUSEEVENTF_LEFTUP | Win32Constant.MOUSEEVENTF_ABSOLUTE);
+
+for (int i = 0; i < 10; i++)
+{
+    IntPtr hwnd = Win32Api.WindowFromPoint(nowMouseLoc);
+    Win32Api.SetForegroundWindow(hwnd); 
+    myMouseManager(Win32Constant.MOUSEEVENTF_MOVE | Win32Constant.MOUSEEVENTF_ABSOLUTE);
+    Win32Api.SetCursorPos(nowMouseLoc.X+i, nowMouseLoc.Y+i);
+    Thread.Sleep(40);
+}
+ */
+
+
+
+//Win32Api.SetForegroundWindow(intptr);

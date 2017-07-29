@@ -1,0 +1,9 @@
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\bin\Debug\upButNoFocus.exe.config
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\bin\Debug\upButNoFocus.exe
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\bin\Debug\upButNoFocus.pdb
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\obj\Debug\upButNoFocus.Form1.resources
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\obj\Debug\upButNoFocus.Properties.Resources.resources
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\obj\Debug\upButNoFocus.csproj.GenerateResource.Cache
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\obj\Debug\upButNoFocus.exe
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\obj\Debug\upButNoFocus.pdb
+F:\外包\test\置顶窗口\upButNoFocus\upButNoFocus\obj\Debug\upButNoFocus.csprojResolveAssemblyReference.cache
