@@ -34,5 +34,7 @@ namespace ReceiveData
 
         //用来设置窗口不获取焦点
         public const int WS_EX_NOACTIVATE = 0x08000000;
+
+        public const int WM_KILLFOCUS = 0x0008;
     }
 }

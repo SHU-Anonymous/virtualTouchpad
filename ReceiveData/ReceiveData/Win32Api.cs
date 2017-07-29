@@ -41,5 +41,14 @@ namespace ReceiveData
 
         [DllImport("user32.dll", EntryPoint = "WindowFromPoint")]
         public static extern IntPtr WindowFromPoint(Point p);
+
+        [DllImport("user32.dll", EntryPoint = "keybd_event", SetLastError = true)]
+        public static extern void keybd_event(Keys bVk, byte bScan, uint dwFlags, uint dwExtraInfo);
+
+        [DllImport("user32.dll", EntryPoint = "ShowCursor", CharSet = CharSet.Auto)]
+        public extern static void ShowCursor(int status);
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        public static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
     }
 }
