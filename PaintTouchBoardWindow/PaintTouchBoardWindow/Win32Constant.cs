@@ -33,5 +33,9 @@ namespace PaintTouchBoardWindow
 
         //用来设置窗口不获取焦点
         public const int WS_EX_NOACTIVATE = 0x08000000;
+
+        public const int SWP_NOACTIVATE = 0x0010;
+        public const int SWP_NOSIZE = 1;
+        public const int WP_NOMOVE = 2;
     }
 }

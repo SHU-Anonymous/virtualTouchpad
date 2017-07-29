@@ -55,5 +55,19 @@ namespace PaintTouchBoardWindow
             [FieldOffset(4)]
             public tagHARDWAREINPUT hi;
         }
+
+        public struct RECT
+        {
+            public long left;
+            public long top;
+            public long right;
+            public long bottom;
+        }
+
+        public struct POINT
+        {
+            public long x;
+            public long y;
+        }
     }
 }
